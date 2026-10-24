@@ -3,49 +3,45 @@
 A general learning guide to common combustion and flue-gas measurements. It is not manufacturer-specific documentation and does not replace the analyser manual, local regulations, or competent combustion-safety procedures.
 
 ## Typical parameters
+
 | Parameter | Common unit | Why it matters | Important caveat |
 |---|---|---|---|
-| Oxygen (O₂) | % vol | Indicates residual oxygen and helps assess excess air | Depends on fuel, appliance, and test conditions |
-| Carbon monoxide (CO) | ppm or mg/m³ | Indicates incomplete combustion and is safety-relevant | Follow instrument procedures and applicable limits |
-| Carbon dioxide (CO₂) | % vol | Combustion/product-gas indicator | Check whether measured or calculated |
-| Nitric oxide (NO) | ppm or mg/m³ | One component of NOx emissions | Sensor range and reporting basis matter |
-| Nitrogen dioxide (NO₂) | ppm or mg/m³ | Relevant pollutant in some applications | Not every analyser measures NO₂ directly |
-| Flue-gas temperature | °C | Used in combustion and heat-loss assessment | Probe placement and stabilisation affect readings |
-| Ambient / combustion-air temperature | °C | Reference input for some calculations | Measure where the procedure specifies |
-| Pressure / draught | Pa, hPa, or mbar | Indicates pressure difference or chimney draught | Confirm sign convention and connection method |
-
-Parameters and sensor types vary by instrument. Verify exact capability in official model documentation.
+| Oxygen (O₂) | % vol | Helps assess residual oxygen and excess air | Interpret with fuel, appliance, and test conditions |
+| Carbon monoxide (CO) | ppm or mg/m³ | Indicates incomplete combustion and may be safety-critical | Follow approved safety procedures; do not rely on one reading alone |
+| Carbon dioxide (CO₂) | % vol | Supports combustion interpretation | May be measured or calculated depending on instrument/method |
+| Nitrogen oxides (NO / NO₂) | ppm or mg/m³ | Relevant to combustion emissions | Sensor capability and sampling method vary |
+| Flue-gas temperature | °C | Helps characterise operating conditions | Probe location and response affect results |
+| Draught / pressure | Pa or hPa | Helps assess pressure conditions where applicable | Use the correct approved connection and method |
 
 ## Conceptual sampling path
-```mermaid
+
+~~~mermaid
 flowchart LR
-  A[Flue-gas sampling point] --> B[Probe and sample line]
-  B --> C[Conditioning, if specified]
-  C --> D[Analyser measurement cells]
-  D --> E[Displayed values and documented result]
-```
-Follow the analyser instructions for filters, condensate traps, sample flow, warm-up, leak checks, calibration, and sensor protection. Not all instruments use the same sample-conditioning arrangement.
+  A[Sampling point] --> B[Probe and filter]
+  B --> C[Sample conditioning as applicable]
+  C --> D[Gas sensors / analyser]
+  D --> E[Display and recorded result]
+~~~
 
-## Combustion concepts
-- **Excess air:** air supplied beyond the theoretical amount required for combustion. Too little air can contribute to incomplete combustion; excessive air can increase stack heat losses.
-- **Combustion efficiency:** an estimate based on defined inputs and a calculation method; it is not necessarily overall system efficiency.
-- **O₂ / CO interpretation:** assess alongside fuel type, appliance design, operating load, sampling position, ambient conditions, and the applicable procedure.
-- **Reference oxygen correction:** emissions may be reported corrected to a standard reference O₂ level. State the formula and reference basis; do not compare values with different bases directly.
+This is a conceptual diagram, not the internal design of a particular analyser.
 
-## Safe workflow (high level)
-1. Identify the analyser model and consult its current official manual.
-2. Confirm appliance, fuel, operating condition, test location, and applicable procedure.
-3. Inspect consumables and instrument status as directed by the manual.
-4. Sample only at approved points and follow site safety controls.
-5. Allow readings to stabilise as instructed; record units and conditions.
-6. Interpret values using the applicable standard and competent guidance.
-7. Complete post-use care and record faults or maintenance.
+## General measurement concepts
 
-## Limitations
-This repository explains general concepts only. It does not confirm specific ECOM model features, accuracy, sensor technology, service intervals, or regulatory compliance.
+- Excess air is air supplied beyond the theoretical amount required for combustion; interpretation depends on fuel and method.
+- Sampling position, leaks, condensate, contamination, sensor condition, and operating state can affect readings.
+- Compare results only when units, measurement basis, sampling method, and operating conditions are compatible.
+
+## Guide
+
+- [Combustion Measurement Workflow](guides/combustion-measurement-workflow.md) — pre-checks, recording context, interpretation cautions, and safe close-out
+
+## Safe high-level workflow
+
+Use the instrument's approved startup, zeroing, sampling, and shutdown procedure. Check the service status and sampling train before measurement. Record instrument identity, operating conditions, units, sampling point, and relevant alarms. Follow the manufacturer's maintenance instructions after use.
 
 ## References
-- [U.S. EPA — Air emissions and monitoring resources](https://www.epa.gov/emc)
-- [ECOM official website](https://www.ecom.de/)
 
-**Status:** Educational reference. No analyser test or customer measurement is claimed.
+- [ECOM Measurement Technology](https://www.ecom.de/en/)
+- [U.S. EPA — Stationary Source Emissions](https://www.epa.gov/emc)
+
+This repository is educational. No customer measurement, physical analyser test, or compliance determination is claimed.
